@@ -30,6 +30,10 @@ task :shotgun => [:install] do
   `bundle exec shotgun -p 4567 todo.rb`
 end
 
+desc "Sets up heroku branch for the todo app"
+task :setup do
+    `git remote add heroku git@heroku.com:rack-todo.git`
+end
 desc "Deploys the app"
 task :deploy => [:install, :test] do
   `git push heroku master`
