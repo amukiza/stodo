@@ -2,6 +2,7 @@
   %h3.pull_left
     List of Todos
   %a.pull_right
+  %a{:href=>'/new', :class=>'pull_right'}
     Add
 %ul
   -if @tasks
@@ -10,6 +11,7 @@
         =task.name 
         =task.description
         =task.date
+    -@task
   -else
     %br
     .alert.alert-warning.alert-dismissable
