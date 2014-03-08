@@ -17,9 +17,16 @@ describe "Task Manager" do
     end
     it "Should not add the same task twice" do
         task_manager.add(task)
-        expect(task_manager.tasks.count).should eq(1)
+        expect(task_manager.tasks.count).to eq(1)
         task_manager.add(task)
         expect(task_manager.tasks.count).to eq(1)
+    end
+
+    it "should add tasks that do not exists" do
+        task_manager.add(task)
+        expect(task_manager.tasks.count).to eq(1)
+        task_manager.add(Task.new "Digging", "Description", "2012-22-2")
+        expect(task_manager.tasks.count).to eq(2)
     end
     it "returns same task as added" do
         task_manager.add(task)
