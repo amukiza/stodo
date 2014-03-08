@@ -1,16 +1,28 @@
 require 'sinatra'
 Dir['./lib/*.rb'].each { |file| require file }
-require 'pry'
+require 'sinatra/session'
+set :session_secret, 'So0perSeKr3t!'
+
 
 get "/" do
-    @tasks_manager = TaskManager.new
-    @task = Task.new "name", "Description", "2006-09-05"
-    @tasks_manager.add(@task)
-    @tasks = @tasks_manager.tasks
+    session_start! unless session?
+    session["task_manager"] = TaskManager.new unless session["task_manager"]
+      @task = Task.new "Eating lunch", "Every one does that", "2006-09-05"
+    session["task_manager"].add(@task)
+    @tasks = session["task_manager"].tasks
     haml :index
 end
 
 
 get "/new" do
     haml :new
+end
+
+
+post "/new" do
+
+  @task = Task.new params['name'], params['description'], params['date']
+  session["task_manager"].add(@task)
+  @tasks = session["task_manager"].tasks
+  redirect '/'
 end
