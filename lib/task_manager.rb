@@ -4,7 +4,8 @@ class TaskManager
  def initialize
      @tasks = []
  end
+
   def add task
-      @tasks << task
+      @tasks << task unless @tasks.include? task
   end
 end

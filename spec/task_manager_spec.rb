@@ -15,7 +15,12 @@ describe "Task Manager" do
       task_manager.add(task)
       expect(task_manager.tasks.count).to eq(1)
     end
-
+    it "Should not add the same task twice" do
+        task_manager.add(task)
+        expect(task_manager.tasks.count).should eq(1)
+        task_manager.add(task)
+        expect(task_manager.tasks.count).to eq(1)
+    end
     it "returns same task as added" do
         task_manager.add(task)
         expect(task_manager.tasks.first).to eq(task)
