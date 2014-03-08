@@ -1,0 +1,18 @@
+%div
+  %h3.pull_left
+    List of Todos
+  %a.pull_right
+    Add
+%ul
+  -if @tasks
+    -@tasks.each do|task|
+      %li
+        =task.name 
+        =task.description
+        =task.date
+  -else
+    %br
+    .alert.alert-warning.alert-dismissable
+      %button.close
+      %h4
+        You donot have any tasks yet

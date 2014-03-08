@@ -7,5 +7,6 @@ class TaskManager
 
   def add task
       @tasks << task unless @tasks.include? task
+      self
   end
 end
