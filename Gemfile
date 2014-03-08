@@ -17,4 +17,6 @@ group :test do
   gem 'rspec-mocks'
   gem 'shotgun'
   gem 'capybara'
+  gem 'cucumber'
+  gem 'cucumber-sinatra'
 end
