@@ -1,4 +1,5 @@
 require 'sinatra'
+Dir['./lib/*.rb'].each { |file| require file }
 require 'pry'
 
 get "/" do
