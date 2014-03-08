@@ -3,7 +3,7 @@ Given(/^I visit the home page$/) do
 end
 
 Given(/^I should see the app title$/) do
-   # expect(page).to have_title "MyTodo List"
+  #expect(page).to have_title "MyTodo List"
 end
 
 Given(/^I should see the welcome text$/) do

@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %title MyTodo List
+    %meta{:charset=>"utf-8", :content => "IE=edge"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %link(rel="shortcut icon" href="/images/favicon.ico")
+    %link(rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen")
+    %link(rel="stylesheet" href="datepicker/css/datepicker.css" media="screen")
+    %link(rel="stylesheet" href="bootstrap/css/jumbotron-narrow.css" media="screen")
+    %script(src="http://code.jquery.com/jquery-1.9.1.js")
+    %script(src="datepicker/js/bootstrap-datepicker.js")
+    %script(src="js/todo.js")
+  %body
+    .container
+      .header
+        .nav.nav-pills.pull-right
+          %li.active
+            %a{:href=>"#"}Tasks
+          %li
+            %a{:href=>"#"}About
+          %li
+            %a{:href=>"#"}Contact
+
+      %h3
+        My Todo List
+      %hr
+      .jumbotron
+        = yield

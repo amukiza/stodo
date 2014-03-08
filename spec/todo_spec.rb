@@ -5,4 +5,10 @@ describe "Blog" do
         get("/")
         expect(last_response).to be_ok
     end
+
+    it "renders new task with success" do
+        get("/new")
+        expect(last_response).to be_ok
+    end
+
 end
