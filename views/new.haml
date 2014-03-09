@@ -1,12 +1,17 @@
-%form{ :action => "", :method => "post", :role=>"form"}
-  %fieldset
-    .form-group
-      %label{:for => "name"} Name:
-      %input{:type => "text", :name => "name", :class => "form-control", :placeholder=>"Task name"}
-    .form-group
-      %label{:for => "where"} Description:
-      %textarea{:name => "description", :class => "form-control", :placeholder=>"Description", :rows=>"10", :cols=>"50"}
-    .form-group
-      %label{:for => "date"} Date:
-      %input{:type => "text", :name => "date", :class => "form-control", :id=>'date-field', :placeholder=>"Date"  }
-    %input{:type => "submit", :value => "Save", :class => "btn btn-primary btn-lg btn-block"}
+.panel.panel-default
+  .panel-heading
+    %h4.panel-title
+      New todo task
+  .panel-body
+    %form{ :action => "", :method => "post", :role=>"form"}
+      %fieldset
+        .form-group
+          %label{:for => "name"} Name:
+          %input{:type => "text", :name => "name", :class => "form-control", :placeholder=>"Task name"}
+        .form-group
+          %label{:for => "where"} Description:
+          %textarea{:name => "description", :class => "form-control", :placeholder=>"Description", :rows=>"10", :cols=>"50"}
+        .form-group
+          %label{:for => "date"} Date:
+          %input{:type => "text", :name => "date", :class => "form-control", :id=>'date-field', :placeholder=>"Date"  }
+        %input{:type => "submit", :value => "Save", :class => "btn btn-primary btn-lg btn-block"}

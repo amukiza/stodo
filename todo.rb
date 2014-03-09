@@ -25,8 +25,7 @@ end
 
 
 post "/delete" do
-  @task_manager = session["task_manager"]
-  session.clear if session?
+  clear_session_and_return_old_taskmager
   @task_manager.delete(params[:name])
   session["task_manager"] = @task_manager
   redirect '/'
@@ -39,3 +38,10 @@ def task_manager
   session["task_manager"] = TaskManager.new unless session["task_manager"]
   session["task_manager"]
 end
+
+def clear_session_and_return_old_taskmager
+  @task_manager = session["task_manager"]
+  session.clear if session?
+  @task_manager 
+end
+  
