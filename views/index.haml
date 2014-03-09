@@ -1,20 +1,35 @@
-%div
-  %h3.pull_left
-    List of Todos
-  %a.pull_right
-  %a{:href=>'/new', :class=>'pull_right'}
-    Add
-%ul
-  -if @tasks
-    -@tasks.each do|task|
-      %li
-        =task.name 
-        =task.description
-        =task.date
-    -@task
-  -else
-    %br
-    .alert.alert-warning.alert-dismissable
-      %button.close
-      %h4
-        You do not have any tasks yet
+%div.row
+  %div.col-md-10
+    %h3.pull_left
+  %div.col-md-2
+    %a.pull_right
+    %a.btn.btn-sm.btn-default{:href=>'/new', :class=>'pull_right', :id=>"add-new-btn"}
+      %span.glyphicon.glyphicon-plus-sign
+      Add
+%div.row
+  %div.col-md-12
+  .panel.panel-default
+    .panel-heading
+      %h4.panel-title
+        List of Todos
+    .panel-body
+      .list-group
+        %ul
+          -if @tasks
+            -@tasks.each do|task|
+              %span.list-group-item  
+                %h4.list-group-item-heading
+                  =task.name 
+                  on
+                  =task.date
+                %p.list-group-item-text
+                  =task.description
+                %a{:href=>"/delete/#{task.name}", :id=>'delete-btn'}
+                  %span.glyphicon.glyphicon-trash
+                  Delete
+          -else
+            %br
+              .alert.alert-warning.alert-dismissable
+              %button.close
+              %h4
+              You do not have any tasks yet

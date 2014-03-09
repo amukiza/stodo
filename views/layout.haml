@@ -11,6 +11,8 @@
     %script(src="http://code.jquery.com/jquery-1.9.1.js")
     %script(src="datepicker/js/bootstrap-datepicker.js")
     %script(src="js/todo.js")
+    %link(rel="stylesheet" href="css/style.css" mdeia="screen")
+    
   %body
     .container
       .header
@@ -25,5 +27,5 @@
       %h3
         My Todo List
       %hr
-      .jumbotron
+      %div
         = yield

@@ -23,6 +23,11 @@ post "/new" do
   redirect '/'
 end
 
+
+get "/delete/:name" do
+  task_manager.delete(params[:name])
+end
+
 private
 
 def task_manager

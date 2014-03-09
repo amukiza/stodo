@@ -32,5 +32,18 @@ describe "Task Manager" do
         task_manager.add(task)
         expect(task_manager.tasks.first).to eq(task)
     end
+    it "deletes a task" do
+      task_manager.add(task)
+      expect(task_manager.tasks.first).to eq(task)
+      expect(task_manager.tasks.count).to eq(1)
+      task_manager.delete('name')
+      expect(task_manager.tasks.count).to eq(0)
+    end
+    
+    it "finds a task by name" do
+      task_manager.add(task)
+      expect(task_manager.find('name')).to eq(task)
+    end
+    
   end
 end

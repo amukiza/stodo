@@ -1,0 +1,14 @@
+#add-new-btn{
+  margin-left: 42px;
+  margin-bottom: 8px;
+}
+.list-group{
+  margin-right: 39px !important;
+}
+.delete-btn{
+  text-decoration: none;
+  cursor: pointer;
+}
+#delete-btn :hover;{
+  text-decoration: none;
+}
