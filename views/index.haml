@@ -24,9 +24,12 @@
                   =task.date
                 %p.list-group-item-text
                   =task.description
-                %a{:href=>"/delete/#{task.name}", :id=>'delete-btn'}
-                  %span.glyphicon.glyphicon-trash
-                  Delete
+                .btn-group  
+                  %form{:action=>'/delete', :method=>"post", :role=>"form"}
+                    %input{:type=>'hidden', :value=>"#{task.name}", :name=>'name'}
+                    %button.btn.btn-xs.btn-danger{:id=>'delete-btn', :type=>'submit'}
+                      %span.glyphicon.glyphicon-trash
+                      Delete
           -else
             %br
               .alert.alert-warning.alert-dismissable

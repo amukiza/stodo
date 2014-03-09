@@ -24,8 +24,12 @@ post "/new" do
 end
 
 
-get "/delete/:name" do
-  task_manager.delete(params[:name])
+post "/delete" do
+  @task_manager = session["task_manager"]
+  session.clear if session?
+  @task_manager.delete(params[:name])
+  session["task_manager"] = @task_manager
+  redirect '/'
 end
 
 private
