@@ -16,11 +16,7 @@ class TaskManager
   end
 
   def find name
-    @tasks.each do|task|
-      if task.name.eql? name
-        return task
-      end
-    end
+    @tasks.select {|task| task.name.eql? name }.first
   end
 
 end
