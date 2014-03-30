@@ -11,7 +11,7 @@ Webrat.configure do |config|
   config.mode = :rack
 end
 
-class WebratMixinExample
+class WebratMixin
   include Rack::Test::Methods
   include Webrat::Methods
   include Webrat::Matchers
@@ -23,4 +23,4 @@ class WebratMixinExample
   end
 end
 
-World{WebratMixinExample.new}
+World{WebratMixin.new}
