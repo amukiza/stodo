@@ -3,13 +3,12 @@ Given(/^I visit the home page$/) do
 end
 
 Given(/^I should see the app title$/) do
-  #expect(page).to have_title "MyTodo List"
-end
-
-Given(/^I should see the welcome text$/) do
-      pending # express the regexp above with the code you wish you had
+  response.should have_selector("title:contains('MyTodo List')")
 end
 
 Given(/^I should see the links for actions$/) do
-      pending # express the regexp above with the code you wish you had
+      response.should have_selector("li:contains('About')")
+      response.should have_selector("li:contains('Tasks')")
+      response.should have_selector("li:contains('Calendar')")
+      response.should have_selector("h4:contains('List of Todos')")
 end

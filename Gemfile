@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 
 gem 'rake'
+gem 'webrat'
 gem 'sinatra'
 gem 'sinatra-session'
 gem 'haml'
